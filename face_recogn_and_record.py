@@ -9,19 +9,19 @@ fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output_Faces.avi', fourcc, 20.0, (640, 480))
 frame_number = 0
 
-sanders_image = face_recognition.load_image_file("C:/Users/flyse/AppData/Local/Programs/Python/Python37/Sanders.jpg")
+sanders_image = face_recognition.load_image_file("Sanders.jpg")
 sanders_face_encoding = face_recognition.face_encodings(sanders_image)[0]
 
-turing_image = face_recognition.load_image_file("C:/Users/flyse/AppData/Local/Programs/Python/Python37/Turing.jpg")
+turing_image = face_recognition.load_image_file("Turing.jpg")
 turing_face_encoding = face_recognition.face_encodings(turing_image)[0]
 
-thatcher_image = face_recognition.load_image_file("C:/Users/flyse/AppData/Local/Programs/Python/Python37/Thatcher.jpg")
+thatcher_image = face_recognition.load_image_file("Thatcher.jpg")
 thatcher_face_encoding = face_recognition.face_encodings(thatcher_image)[0]
 
-einstein_image = face_recognition.load_image_file("C:/Users/flyse/AppData/Local/Programs/Python/Python37/Einstein.jpg")
+einstein_image = face_recognition.load_image_file("Einstein.jpg")
 einstein_face_encoding = face_recognition.face_encodings(einstein_image)[0]
 
-twain_image = face_recognition.load_image_file("C:/Users/flyse/AppData/Local/Programs/Python/Python37/Twain.jpg")
+twain_image = face_recognition.load_image_file("Twain.jpg")
 twain_face_encoding = face_recognition.face_encodings(twain_image)[0]
 
 known_face_encodings = [
@@ -65,7 +65,7 @@ while True:
         face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
         face_names = []
         for face_encoding in face_encodings:
-            # See if the face is a match for the known face(s)
+            # See if the face is a match for the known faces
             matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
             name = "Unknown"
             face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)

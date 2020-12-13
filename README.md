@@ -1,4 +1,4 @@
-# face_recognition
+# Python face recognition app :see_no_evil:
 Face recognition and recording
 
 written in Python 3.7
